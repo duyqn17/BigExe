@@ -34,6 +34,8 @@ namespace BIgExe_LTHSK
             return taiKhoans;
         }
 
+        
+
         public List<KhachHang> getKhachHangs(string query)
         {
 
@@ -53,7 +55,7 @@ namespace BIgExe_LTHSK
                             reader.GetString(1),
                             reader.GetString(2),
                             reader.GetString(3),
-                            reader.GetBoolean(4).ToString(),
+                            reader.GetBoolean(4),
                             reader.GetString(5),
                             reader.GetString(6)
                             ));
@@ -63,6 +65,35 @@ namespace BIgExe_LTHSK
                     conn.Close() ;
                 }
                 return khachHangs;
+            }
+        }
+
+        public List<HoaDon> getHoaDons(string query)
+        {
+
+            List<HoaDon> hoaDons = new List<HoaDon>();
+
+            using (SqlConnection conn = Connection.getConnection())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        //while (reader.Read())
+                        //{
+                        //    hoaDons.Add(new HoaDon(
+                        //    reader.GetInt32(0),
+                        //    reader.GetInt32(1),
+                        //    reader.GetDateTime(2),
+                        //    Convert.ToDecimal(reader["fTongTien"])
+                        //    ));
+                        //}
+
+                    }
+                    conn.Close();
+                }
+                return hoaDons;
             }
         }
     }

@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\c#\\BIgExe_LTHSK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|D:\\c#\\BIgExe_LTHSK\\bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|D:\\c#\\BIgExe_LTHSK\\bigexe_lthsk\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Modify.cs",
               "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\Modify.cs",
               "RelativeDocumentMoniker": "BIgExe_LTHSK\\Modify.cs",
               "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\Modify.cs",
               "RelativeToolTip": "BIgExe_LTHSK\\Modify.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAD4vw0AAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAkwDkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-08T13:01:02.606Z",
               "IsPinned": true,
@@ -52,28 +52,28 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\KhachHang.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\KhachHang.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\KhachHang.cs",
+              "RelativeToolTip": "BIgExe_LTHSK\\KhachHang.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAtwBYAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T16:23:07.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "frmKhachHang.cs",
               "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs",
               "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmKhachHang.cs",
               "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs*",
               "RelativeToolTip": "BIgExe_LTHSK\\frmKhachHang.cs*",
-              "ViewState": "AgIAADcAAAAAAAAAAADwvzoAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGcBAAAAAAAAAAAuwHUBAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-09T06:11:54.471Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmDangNhap.cs",
-              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDangNhap.cs",
-              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmDangNhap.cs",
-              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDangNhap.cs",
-              "RelativeToolTip": "BIgExe_LTHSK\\frmDangNhap.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwD8AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T15:49:39.239Z",
+              "WhenOpened": "2025-03-10T15:13:56.018Z",
               "EditorCaption": ""
             },
             {
@@ -85,7 +85,7 @@
               "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs [Design]*",
               "RelativeToolTip": "BIgExe_LTHSK\\frmKhachHang.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T15:12:37.546Z",
+              "WhenOpened": "2025-03-10T15:13:37.022Z",
               "EditorCaption": " [Design]"
             }
           ]

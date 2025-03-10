@@ -38,6 +38,8 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.txtXNMK = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,19 +96,20 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(172, 353);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 29);
+            this.label4.Size = new System.Drawing.Size(189, 29);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Email khôi phục";
+            this.label4.Text = "Email khôi phục:";
             // 
             // btnDangKy
             // 
             this.btnDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangKy.Location = new System.Drawing.Point(554, 400);
+            this.btnDangKy.Location = new System.Drawing.Point(554, 510);
             this.btnDangKy.Name = "btnDangKy";
             this.btnDangKy.Size = new System.Drawing.Size(118, 45);
             this.btnDangKy.TabIndex = 4;
             this.btnDangKy.Text = "Đăng ký";
             this.btnDangKy.UseVisualStyleBackColor = true;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // txtMatKhau
             // 
@@ -136,12 +139,33 @@
             this.txtEmail.Size = new System.Drawing.Size(255, 36);
             this.txtEmail.TabIndex = 1;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(172, 405);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(160, 29);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Mã nhân viên:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(417, 402);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(134, 37);
+            this.comboBox1.TabIndex = 5;
+            // 
             // frmDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 506);
+            this.ClientSize = new System.Drawing.Size(862, 599);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnDangKy);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -153,6 +177,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmDangKy";
             this.Text = "frmDangKy";
+            this.Load += new System.EventHandler(this.frmDangKy_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,5 +196,7 @@
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.TextBox txtXNMK;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

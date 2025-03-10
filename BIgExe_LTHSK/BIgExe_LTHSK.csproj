@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection.cs" />
+    <Compile Include="DichVu.cs" />
     <Compile Include="frmDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,7 +102,10 @@
     <Compile Include="frmTrangChu.Designer.cs">
       <DependentUpon>frmTrangChu.cs</DependentUpon>
     </Compile>
+    <Compile Include="HoaDon.cs" />
     <Compile Include="KhachHang.cs" />
+    <Compile Include="NhanVien.cs" />
+    <Compile Include="Phong.cs" />
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="Modify.cs" />
     <Compile Include="Program.cs" />

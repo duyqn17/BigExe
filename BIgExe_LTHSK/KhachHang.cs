@@ -12,7 +12,7 @@ namespace BIgExe_LTHSK
         public string hoTen {  get; set; }
         public string soDienThoai { get; set; }
         public string email { get; set; }
-        public string gioiTinh { get; set; }
+        public bool gioiTinh { get; set; }
         public string diaChi { get; set; }
         public string loaiKhach {  get; set; }
 
@@ -20,7 +20,7 @@ namespace BIgExe_LTHSK
         {
         }
 
-        public KhachHang(int maKH, string hoTen, string soDienThoai, string email, string gioiTinh, string diaChi, string loaiKhach)
+        public KhachHang(int maKH, string hoTen, string soDienThoai, string email, bool gioiTinh, string diaChi, string loaiKhach)
         {
             this.maKH = maKH;
             this.hoTen = hoTen;

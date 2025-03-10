@@ -37,14 +37,14 @@
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.dtpNgaylap = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnSuaHD = new System.Windows.Forms.Button();
-            this.btnXoaHD = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lvHoaDon = new System.Windows.Forms.ListView();
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSuaHD = new System.Windows.Forms.Button();
+            this.btnXoaHD = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -130,26 +130,6 @@
             this.panel1.Size = new System.Drawing.Size(1573, 379);
             this.panel1.TabIndex = 3;
             // 
-            // btnSuaHD
-            // 
-            this.btnSuaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaHD.Location = new System.Drawing.Point(464, 363);
-            this.btnSuaHD.Name = "btnSuaHD";
-            this.btnSuaHD.Size = new System.Drawing.Size(163, 49);
-            this.btnSuaHD.TabIndex = 0;
-            this.btnSuaHD.Text = "Sửa Hóa Đơn";
-            this.btnSuaHD.UseVisualStyleBackColor = true;
-            // 
-            // btnXoaHD
-            // 
-            this.btnXoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaHD.Location = new System.Drawing.Point(759, 363);
-            this.btnXoaHD.Name = "btnXoaHD";
-            this.btnXoaHD.Size = new System.Drawing.Size(163, 49);
-            this.btnXoaHD.TabIndex = 0;
-            this.btnXoaHD.Text = "Xóa Hóa Đơn";
-            this.btnXoaHD.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lvHoaDon);
@@ -179,6 +159,11 @@
             this.lvHoaDon.UseCompatibleStateImageBehavior = false;
             this.lvHoaDon.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Mã Hóa Đơn";
+            this.columnHeader4.Width = 300;
+            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Mã Đăng Ký";
@@ -194,10 +179,25 @@
             this.columnHeader3.Text = "Tổng Tiền";
             this.columnHeader3.Width = 300;
             // 
-            // columnHeader4
+            // btnSuaHD
             // 
-            this.columnHeader4.Text = "Mã Hóa Đơn";
-            this.columnHeader4.Width = 300;
+            this.btnSuaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaHD.Location = new System.Drawing.Point(464, 363);
+            this.btnSuaHD.Name = "btnSuaHD";
+            this.btnSuaHD.Size = new System.Drawing.Size(163, 49);
+            this.btnSuaHD.TabIndex = 0;
+            this.btnSuaHD.Text = "Sửa Hóa Đơn";
+            this.btnSuaHD.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaHD
+            // 
+            this.btnXoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaHD.Location = new System.Drawing.Point(759, 363);
+            this.btnXoaHD.Name = "btnXoaHD";
+            this.btnXoaHD.Size = new System.Drawing.Size(163, 49);
+            this.btnXoaHD.TabIndex = 0;
+            this.btnXoaHD.Text = "Xóa Hóa Đơn";
+            this.btnXoaHD.UseVisualStyleBackColor = true;
             // 
             // frmHoaDon
             // 
@@ -217,6 +217,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmHoaDon";
             this.Text = "frmHoaDon";
+            this.Load += new System.EventHandler(this.frmHoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);

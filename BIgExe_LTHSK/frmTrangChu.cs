@@ -138,5 +138,25 @@ namespace BIgExe_LTHSK
                 panel3.Controls[0].Dispose();
             }
         }
+        private void OpenChildFormBill(Form childForm)
+        {
+            if (panel3.Controls.Count > 0)
+            {
+                panel3.Controls[0].Dispose();
+            }
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+
+            panel3.Controls.Add(childForm);
+            panel3.BringToFront();
+            childForm.Show();
+        }
+
+        private void btnThanhToanHD_Click(object sender, EventArgs e)
+        {
+            frmHoaDon frm = new frmHoaDon();
+            OpenChildFormBill (frm);
+        }
     }
 }

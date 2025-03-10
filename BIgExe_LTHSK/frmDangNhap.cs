@@ -58,7 +58,7 @@ namespace BIgExe_LTHSK
                 {
                     //lblThongbaodangnhap.Text = "Đăng nhập thành công";
                     //lblThongbaodangnhap.Show();
-                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
                     frmTrangChu trangChu = new frmTrangChu();
                     trangChu.Show();
                 }

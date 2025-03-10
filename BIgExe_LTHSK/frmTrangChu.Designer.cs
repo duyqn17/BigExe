@@ -107,6 +107,7 @@
             this.btnThanhToanHD.TabIndex = 0;
             this.btnThanhToanHD.Text = "Thanh Toán/Hóa Đơn";
             this.btnThanhToanHD.UseVisualStyleBackColor = true;
+            this.btnThanhToanHD.Click += new System.EventHandler(this.btnThanhToanHD_Click);
             // 
             // btnDichVu
             // 

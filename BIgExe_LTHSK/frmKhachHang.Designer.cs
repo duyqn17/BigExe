@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboLoaiKhach = new System.Windows.Forms.ComboBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnSuaKH = new System.Windows.Forms.Button();
             this.btnXoaKH = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rabNu = new System.Windows.Forms.RadioButton();
             this.rabNam = new System.Windows.Forms.RadioButton();
-            this.txtLoaiKH = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtDiaChiKH = new System.Windows.Forms.TextBox();
@@ -51,8 +51,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnTim = new System.Windows.Forms.Button();
-            this.cboTimKiemKH = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lvKhachHang = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -82,12 +80,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cboLoaiKhach);
             this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.btnSuaKH);
             this.groupBox1.Controls.Add(this.btnXoaKH);
             this.groupBox1.Controls.Add(this.btnThemKH);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.txtLoaiKH);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtDiaChiKH);
@@ -107,6 +105,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cboLoaiKhach
+            // 
+            this.cboLoaiKhach.FormattingEnabled = true;
+            this.cboLoaiKhach.Items.AddRange(new object[] {
+            "VIP",
+            "BASE"});
+            this.cboLoaiKhach.Location = new System.Drawing.Point(398, 328);
+            this.cboLoaiKhach.Name = "cboLoaiKhach";
+            this.cboLoaiKhach.Size = new System.Drawing.Size(209, 39);
+            this.cboLoaiKhach.TabIndex = 5;
             // 
             // btnCapNhat
             // 
@@ -184,14 +193,6 @@
             this.rabNam.TabStop = true;
             this.rabNam.Text = "Nam";
             this.rabNam.UseVisualStyleBackColor = true;
-            // 
-            // txtLoaiKH
-            // 
-            this.txtLoaiKH.Location = new System.Drawing.Point(398, 328);
-            this.txtLoaiKH.Name = "txtLoaiKH";
-            this.txtLoaiKH.Size = new System.Drawing.Size(760, 38);
-            this.txtLoaiKH.TabIndex = 1;
-            this.txtLoaiKH.Validating += new System.ComponentModel.CancelEventHandler(this.txtLoaiKH_Validating);
             // 
             // label6
             // 
@@ -289,8 +290,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.btnTim);
-            this.panel2.Controls.Add(this.cboTimKiemKH);
-            this.panel2.Controls.Add(this.label7);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 401);
             this.panel2.Name = "panel2";
@@ -300,31 +299,13 @@
             // btnTim
             // 
             this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.Location = new System.Drawing.Point(1111, 47);
+            this.btnTim.Location = new System.Drawing.Point(1071, 47);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(86, 32);
+            this.btnTim.Size = new System.Drawing.Size(126, 32);
             this.btnTim.TabIndex = 2;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
-            // 
-            // cboTimKiemKH
-            // 
-            this.cboTimKiemKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboTimKiemKH.FormattingEnabled = true;
-            this.cboTimKiemKH.Location = new System.Drawing.Point(685, 45);
-            this.cboTimKiemKH.Name = "cboTimKiemKH";
-            this.cboTimKiemKH.Size = new System.Drawing.Size(376, 37);
-            this.cboTimKiemKH.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(412, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(247, 29);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Tìm kiếm khách hàng:";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // panel4
             // 
@@ -415,7 +396,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -436,7 +416,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rabNam;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtLoaiKH;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton rabNu;
@@ -445,8 +424,6 @@
         private System.Windows.Forms.Button btnXoaKH;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.ComboBox cboTimKiemKH;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ListView lvKhachHang;
         private System.Windows.Forms.ColumnHeader columnHeader1;
@@ -458,5 +435,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnCapNhat;
+        private System.Windows.Forms.ComboBox cboLoaiKhach;
     }
 }
