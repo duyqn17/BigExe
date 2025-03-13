@@ -31,8 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.cboLoaiKhach = new System.Windows.Forms.ComboBox();
-            this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnSuaKH = new System.Windows.Forms.Button();
             this.btnXoaKH = new System.Windows.Forms.Button();
             this.btnThemKH = new System.Windows.Forms.Button();
@@ -80,8 +81,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLoad);
+            this.groupBox1.Controls.Add(this.btnClear);
             this.groupBox1.Controls.Add(this.cboLoaiKhach);
-            this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.btnSuaKH);
             this.groupBox1.Controls.Add(this.btnXoaKH);
             this.groupBox1.Controls.Add(this.btnThemKH);
@@ -104,7 +106,30 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin khách hàng";
+            this.groupBox1.TextChanged += new System.EventHandler(this.groupBox1_TextChanged);
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Location = new System.Drawing.Point(1272, 283);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(256, 49);
+            this.btnLoad.TabIndex = 7;
+            this.btnLoad.Text = "Tải lại danh sách";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(883, 328);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(275, 35);
+            this.btnClear.TabIndex = 6;
+            this.btnClear.Text = "Xóa các trường đã nhập";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // cboLoaiKhach
             // 
@@ -116,17 +141,6 @@
             this.cboLoaiKhach.Name = "cboLoaiKhach";
             this.cboLoaiKhach.Size = new System.Drawing.Size(209, 39);
             this.cboLoaiKhach.TabIndex = 5;
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(1272, 282);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(256, 49);
-            this.btnCapNhat.TabIndex = 4;
-            this.btnCapNhat.Text = "Cập nhật thông tin";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnSuaKH
             // 
@@ -305,6 +319,7 @@
             this.btnTim.TabIndex = 2;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.TextChanged += new System.EventHandler(this.btnTim_TextChanged);
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // panel4
@@ -333,7 +348,6 @@
             this.lvKhachHang.HideSelection = false;
             this.lvKhachHang.Location = new System.Drawing.Point(0, 0);
             this.lvKhachHang.Name = "lvKhachHang";
-            this.lvKhachHang.Scrollable = false;
             this.lvKhachHang.Size = new System.Drawing.Size(1573, 331);
             this.lvKhachHang.TabIndex = 0;
             this.lvKhachHang.UseCompatibleStateImageBehavior = false;
@@ -434,7 +448,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.ComboBox cboLoaiKhach;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnLoad;
     }
 }

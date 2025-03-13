@@ -8,7 +8,7 @@ namespace BIgExe_LTHSK
 {
     public class Phong
     {
-        public int maPhong {  get; set; }
+        public string maPhong {  get; set; }
         public string loaiPhong { get; set; }
         public float giaPhong { get; set; }
         public string tinhTrang { get; set; }
@@ -17,7 +17,7 @@ namespace BIgExe_LTHSK
         {
         }
 
-        public Phong(int maPhong, string loaiPhong, float giaPhong, string tinhTrang)
+        public Phong(string maPhong, string loaiPhong, float giaPhong, string tinhTrang)
         {
             this.maPhong = maPhong;
             this.loaiPhong = loaiPhong;

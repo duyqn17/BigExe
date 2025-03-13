@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,6 +15,29 @@ namespace BIgExe_LTHSK
 {
     public partial class frmKhachHang : Form
     {
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+        private const int WM_CLOSE = 0x0010;
+
+        private async void dinhNghiaThongBao(string message, string title, int timeout)
+        {
+            Task.Run(async () =>
+            {
+                await Task.Delay(timeout);
+                IntPtr hWnd = FindWindow(null, title);
+                if (hWnd != IntPtr.Zero)
+                {
+                    SendMessage(hWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+                }
+            });
+
+            MessageBox.Show(message, title, MessageBoxButtons.OK);
+        }
         public frmKhachHang()
         {
             InitializeComponent();
@@ -55,12 +79,12 @@ namespace BIgExe_LTHSK
         {
             lvKhachHang.Items.Clear();
             Modify modify = new Modify();
-            string query = "select * from tblKhach";
-            List<KhachHang> khachHangs = modify.getKhachHangs(query);
+            
+            List<KhachHang> khachHangs = modify.getKhachHangs();
 
             foreach (var kh in khachHangs)
             {
-                ListViewItem item = new ListViewItem(kh.maKH.ToString());
+                ListViewItem item = new ListViewItem(kh.maKH);
                 item.SubItems.Add(kh.hoTen);
                 item.SubItems.Add(kh.soDienThoai);
                 item.SubItems.Add(kh.email);
@@ -119,12 +143,13 @@ namespace BIgExe_LTHSK
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
                         {
-                            MessageBox.Show("Đã thêm thành công khách hàng '" + txtHoTenKH.Text + "' vào danh sách", "Thông báo", MessageBoxButtons.OK);
+                            dinhNghiaThongBao("Thêm thành công", "Thông báo", 2000);
                             ClearFields();
+                            LoadKhachHang();
                         }
                         else
                         {
-                            MessageBox.Show("Thêm thất bại.");
+                            dinhNghiaThongBao("Thêm thất bại", "Thông báo", 2000);
                         }
                     }
                 }
@@ -132,86 +157,99 @@ namespace BIgExe_LTHSK
             catch { }
         }
 
-        int ma = -1;
+        string ma = "";
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
-            ma = int.Parse(lvKhachHang.SelectedItems[0].SubItems[0].Text);
-            using (SqlConnection connection = Connection.getConnection())
+            ma = lvKhachHang.SelectedItems[0].SubItems[0].Text;
+            DialogResult re = MessageBox.Show("Bạn có chắc chắn muốn sửa thông tin khách hàng có mã:" + ma + "không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (re == DialogResult.Yes)
             {
-
-                connection.Open();
-                using (SqlCommand cmd = new SqlCommand("sp_SuaKH", connection))
+                using (SqlConnection connection = Connection.getConnection())
                 {
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@makh", ma);
-                    cmd.Parameters.AddWithValue("@hoten", txtHoTenKH.Text);
-                    cmd.Parameters.AddWithValue("@sdt", txtSdtKH.Text);
-                    cmd.Parameters.AddWithValue("@email", txtEmailKH.Text);
-                    if (rabNam.Checked)
-                    {
-                        cmd.Parameters.AddWithValue("@gioitinh", true);
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@gioitinh", false);
-                    }
-                    cmd.Parameters.AddWithValue("@diachi", txtDiaChiKH.Text);
-                    cmd.Parameters.AddWithValue("@loaikhach", cboLoaiKhach.SelectedItem.ToString());
 
-                    int i = cmd.ExecuteNonQuery();
-                    if (i > 0)
-                    {
-                        MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK);
-                        ClearFields();
-                        LoadKhachHang();
-                    }else
-                    {
-                        MessageBox.Show("Sửa thất bại", "Thông báo", MessageBoxButtons.OK);
-                    }    
-                }
-                connection.Close();
-            }
-        }
-
-        private void btnXoaKH_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Bạn có chắc chắn muốn xóa khách hàng này không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            int ma = int.Parse(lvKhachHang.SelectedItems[0].SubItems[0].Text);
-            using (SqlConnection conn = Connection.getConnection())
-            {
-                try
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand("sp_XoaKH", conn))
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand("sp_SuaKH", connection))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@makh", ma);
+                        cmd.Parameters.AddWithValue("@hoten", txtHoTenKH.Text);
+                        cmd.Parameters.AddWithValue("@sdt", txtSdtKH.Text);
+                        cmd.Parameters.AddWithValue("@email", txtEmailKH.Text);
+                        if (rabNam.Checked)
+                        {
+                            cmd.Parameters.AddWithValue("@gioitinh", true);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@gioitinh", false);
+                        }
+                        cmd.Parameters.AddWithValue("@diachi", txtDiaChiKH.Text);
+                        cmd.Parameters.AddWithValue("@loaikhach", cboLoaiKhach.SelectedItem.ToString());
 
                         int i = cmd.ExecuteNonQuery();
                         if (i > 0)
                         {
-                            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
+                            dinhNghiaThongBao("Sửa thành công", "Thông báo", 2000);
                             ClearFields();
                             LoadKhachHang();
                         }
                         else
                         {
-                            MessageBox.Show("Xóa thất bại", "Thông báo", MessageBoxButtons.OK);
+                            dinhNghiaThongBao("Sửa thất bại", "Thông báo", 2000);
                         }
                     }
+                    connection.Close();
                 }
-                catch (SqlException ex)
+            }
+            else
+            {
+                
+            }
+        }
+
+        
+        private void btnXoaKH_Click(object sender, EventArgs e)
+        {
+            DialogResult re = MessageBox.Show("Bạn có chắc chắn muón xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (re == DialogResult.Yes)
+            {
+                string ma = lvKhachHang.SelectedItems[0].SubItems[0].Text;
+                using (SqlConnection conn = Connection.getConnection())
                 {
-                    if (ex.Number == 547)
+                    try
                     {
-                        MessageBox.Show("Không thể xóa khách hàng này vì vẫn còn dữ liệu liên quan trong hệ thống.",
-                                        "Lỗi ràng buộc dữ liệu",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Error);
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand("sp_XoaKH", conn))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@makh", ma);
+
+                            int i = cmd.ExecuteNonQuery();
+                            if (i > 0)
+                            {
+                                dinhNghiaThongBao("Xóa thành công", "Thông báo", 2000);
+                                ClearFields();
+                                LoadKhachHang();
+                            }
+                            else
+                            {
+                                dinhNghiaThongBao("Xóa thất bại", "Thông báo", 2000);
+                            }
+                        }
                     }
-                    else
+                    catch (SqlException ex)
                     {
-                        MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        if (ex.Number == 547)
+                        {
+                            MessageBox.Show("Không thể xóa khách hàng này vì vẫn còn dữ liệu liên quan trong hệ thống.",
+                                            "Lỗi ràng buộc dữ liệu",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi SQL: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -239,16 +277,7 @@ namespace BIgExe_LTHSK
 
         private void txtHoTenKH_TextChanged(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (txtHoTenKH.Text.Trim() != string.Empty)
-            //    {
-            //        errorProvider1.Clear();
-            //    }
-            //}
-            //catch {
-            //    errorProvider1.SetError(txtHoTenKH, "Họ tên đang trống");
-            //}
+            btnTim_Click(sender, e);
         }
 
         private void txtSdtKH_Validating(object sender, CancelEventArgs e)
@@ -307,59 +336,168 @@ namespace BIgExe_LTHSK
         }
 
 
+        //private void btnTim_Click(object sender, EventArgs e)
+        //{
+        //    lvKhachHang.Items.Clear();
+        //    using (SqlConnection connection = Connection.getConnection())
+        //    {
+        //        connection.Open();
+        //        using (SqlCommand command = new SqlCommand("sp_TimKiemKH", connection))
+        //        {
+        //            command.CommandType = CommandType.StoredProcedure;
+        //            string hoTen = txtHoTenKH.Text.Trim();
+        //            command.Parameters.AddWithValue("@hoten", string.IsNullOrEmpty(hoTen) ? "" : hoTen);
+
+        //            //command.Parameters.AddWithValue("@hoten", string.IsNullOrWhiteSpace(txtHoTenKH.Text) ? (object)DBNull.Value : txtHoTenKH.Text);
+        //            command.Parameters.AddWithValue("@sdt", string.IsNullOrWhiteSpace(txtSdtKH.Text) ? (object)DBNull.Value : txtSdtKH.Text);
+        //            command.Parameters.AddWithValue("@email", string.IsNullOrWhiteSpace(txtEmailKH.Text) ? (object)DBNull.Value : txtEmailKH.Text);
+
+
+        //            if (rabNam.Checked)
+        //            {
+
+        //                command.Parameters.AddWithValue("@gioitinh", true);
+        //            }
+        //            else
+        //            {
+
+        //                command.Parameters.AddWithValue("@gioitinh", false);
+        //            }
+
+        //            command.Parameters.AddWithValue("@diachi", string.IsNullOrWhiteSpace(txtDiaChiKH.Text) ? (object)DBNull.Value : txtDiaChiKH.Text);
+
+        //            command.Parameters.AddWithValue("@loaikhach", cboLoaiKhach.SelectedItem == null ? (object)DBNull.Value : cboLoaiKhach.SelectedItem.ToString());
+
+
+        //            using (SqlDataReader reader = command.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    ListViewItem item = new ListViewItem(reader["sMaKhach"].ToString()); // Cột ID
+        //                    item.SubItems.Add(reader["sHoTen"].ToString());  // Họ tên
+        //                    item.SubItems.Add(reader["sSoDienThoai"].ToString()); // Số điện thoại
+        //                    item.SubItems.Add(reader["sEmail"].ToString());  // Email
+        //                    bool gioiTinh = Convert.ToBoolean(reader["bGioiTinh"]);
+        //                    item.SubItems.Add(gioiTinh ? "Nam" : "Nữ");
+        //                    item.SubItems.Add(reader["sDiaChi"].ToString());  // Địa chỉ
+        //                    item.SubItems.Add(reader["sLoaiKhach"].ToString());  // Loại khách
+
+        //                    // Thêm vào ListView
+        //                    lvKhachHang.Items.Add(item);
+        //                    ClearFields();
+        //                }
+        //            }
+
+        //        }
+        //        connection.Close();
+        //    }
+        //}
+
+        //private void btnTim_Click(object sender, EventArgs e)
+        //{
+        //    lvKhachHang.Items.Clear();
+        //    using (SqlConnection connection = Connection.getConnection())
+        //    {
+        //        connection.Open();
+        //        using (SqlCommand command = new SqlCommand("sp_TimKiemKH", connection))
+        //        {
+        //            command.CommandType = CommandType.StoredProcedure;
+
+        //            string hoTen = txtHoTenKH.Text.Trim();
+        //            command.Parameters.AddWithValue("@hoten", string.IsNullOrWhiteSpace(hoTen) ? (object)DBNull.Value : hoTen);
+        //            command.Parameters.AddWithValue("@sdt", string.IsNullOrWhiteSpace(txtSdtKH.Text) ? (object)DBNull.Value : txtSdtKH.Text);
+        //            command.Parameters.AddWithValue("@email", string.IsNullOrWhiteSpace(txtEmailKH.Text) ? (object)DBNull.Value : txtEmailKH.Text);
+
+        //            // Kiểm tra giới tính
+        //            if (rabNam.Checked)
+        //            {
+        //                command.Parameters.AddWithValue("@gioitinh", true);
+        //            }
+        //            else if (rabNu.Checked)
+        //            {
+        //                command.Parameters.AddWithValue("@gioitinh", false);
+        //            }
+        //            else
+        //            {
+        //                command.Parameters.AddWithValue("@gioitinh", (object)DBNull.Value);  // NULL nếu không có lựa chọn
+        //            }
+
+        //            command.Parameters.AddWithValue("@diachi", string.IsNullOrWhiteSpace(txtDiaChiKH.Text) ? (object)DBNull.Value : txtDiaChiKH.Text);
+        //            command.Parameters.AddWithValue("@loaikhach", cboLoaiKhach.SelectedItem == null ? (object)DBNull.Value : cboLoaiKhach.SelectedItem.ToString());
+
+        //            using (SqlDataReader reader = command.ExecuteReader())
+        //            {
+
+        //                while (reader.Read())
+        //                {
+        //                    ListViewItem item = new ListViewItem(reader["sMaKhach"].ToString()); // Cột ID
+        //                    item.SubItems.Add(reader["sHoTen"].ToString());  // Họ tên
+        //                    item.SubItems.Add(reader["sSoDienThoai"].ToString()); // Số điện thoại
+        //                    item.SubItems.Add(reader["sEmail"].ToString());  // Email
+        //                    bool gioiTinh = Convert.ToBoolean(reader["bGioiTinh"]);
+        //                    item.SubItems.Add(gioiTinh ? "Nam" : "Nữ");
+        //                    item.SubItems.Add(reader["sDiaChi"].ToString());  // Địa chỉ
+        //                    item.SubItems.Add(reader["sLoaiKhach"].ToString());  // Loại khách
+
+        //                    // Thêm vào ListView
+        //                    lvKhachHang.Items.Add(item);
+        //                }
+        //                ClearFields();
+
+        //            }
+        //        }
+        //        connection.Close();
+        //    }
+        //}
+
         private void btnTim_Click(object sender, EventArgs e)
         {
-            lvKhachHang.Items.Clear();
             using (SqlConnection connection = Connection.getConnection())
             {
                 connection.Open();
                 using (SqlCommand command = new SqlCommand("sp_TimKiemKH", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    string hoTen = txtHoTenKH.Text.Trim();
-                    command.Parameters.AddWithValue("@hoten", string.IsNullOrEmpty(hoTen) ? "" : hoTen);
 
-                    //command.Parameters.AddWithValue("@hoten", string.IsNullOrWhiteSpace(txtHoTenKH.Text) ? (object)DBNull.Value : txtHoTenKH.Text);
+                    string hoTen = txtHoTenKH.Text.Trim();
+                    command.Parameters.AddWithValue("@hoten", string.IsNullOrWhiteSpace(hoTen) ? (object)DBNull.Value : hoTen);
                     command.Parameters.AddWithValue("@sdt", string.IsNullOrWhiteSpace(txtSdtKH.Text) ? (object)DBNull.Value : txtSdtKH.Text);
                     command.Parameters.AddWithValue("@email", string.IsNullOrWhiteSpace(txtEmailKH.Text) ? (object)DBNull.Value : txtEmailKH.Text);
-                    
 
                     if (rabNam.Checked)
-                    {
-                        
                         command.Parameters.AddWithValue("@gioitinh", true);
-                    }
-                    else
-                    {
-                       
+                    else if (rabNu.Checked)
                         command.Parameters.AddWithValue("@gioitinh", false);
-                    }
+                    else
+                        command.Parameters.AddWithValue("@gioitinh", (object)DBNull.Value);
 
                     command.Parameters.AddWithValue("@diachi", string.IsNullOrWhiteSpace(txtDiaChiKH.Text) ? (object)DBNull.Value : txtDiaChiKH.Text);
-                   
                     command.Parameters.AddWithValue("@loaikhach", cboLoaiKhach.SelectedItem == null ? (object)DBNull.Value : cboLoaiKhach.SelectedItem.ToString());
-
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
+                        var items = new List<ListViewItem>(); // Danh sách tạm để chứa dữ liệu mới
+
                         while (reader.Read())
                         {
-                            ListViewItem item = new ListViewItem(reader["PK_iMaKhach"].ToString()); // Cột ID
-                            item.SubItems.Add(reader["sHoTen"].ToString());  // Họ tên
-                            item.SubItems.Add(reader["sSoDienThoai"].ToString()); // Số điện thoại
-                            item.SubItems.Add(reader["sEmail"].ToString());  // Email
+                            ListViewItem item = new ListViewItem(reader["sMaKhach"].ToString()); // Cột ID
+                            item.SubItems.Add(reader["sHoTen"].ToString());
+                            item.SubItems.Add(reader["sSoDienThoai"].ToString());
+                            item.SubItems.Add(reader["sEmail"].ToString());
                             bool gioiTinh = Convert.ToBoolean(reader["bGioiTinh"]);
                             item.SubItems.Add(gioiTinh ? "Nam" : "Nữ");
-                            item.SubItems.Add(reader["sDiaChi"].ToString());  // Địa chỉ
-                            item.SubItems.Add(reader["sLoaiKhach"].ToString());  // Loại khách
+                            item.SubItems.Add(reader["sDiaChi"].ToString());
+                            item.SubItems.Add(reader["sLoaiKhach"].ToString());
 
-                            // Thêm vào ListView
-                            lvKhachHang.Items.Add(item);
+                            items.Add(item);
                         }
-                    }
 
+                        lvKhachHang.BeginUpdate();
+                        lvKhachHang.Items.Clear();
+                        lvKhachHang.Items.AddRange(items.ToArray()); // Thêm tất cả vào một lần
+                        lvKhachHang.EndUpdate();
+                    }
                 }
-                connection.Close();
             }
         }
 
@@ -372,6 +510,26 @@ namespace BIgExe_LTHSK
             rabNam.Checked = false;
             rabNu.Checked = false;
             cboLoaiKhach.Text = "";
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadKhachHang();
+        }
+
+        private void groupBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTim_TextChanged(object sender, EventArgs e)
+        {
+            //btnTim_Click(sender, e);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace BIgExe_LTHSK
 {
     public class Connection
     {
-        static string connStr = "Data Source=admin\\SQLEXPRESS;Initial Catalog=QuanLyThuePhongKhachSan;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        static string connStr = "Data Source=admin\\SQLEXPRESS;Initial Catalog=QuanLyThuePhongKhachSan1;Integrated Security=True;TrustServerCertificate=True";
         public static SqlConnection getConnection()
         {
             return new SqlConnection(connStr);

@@ -8,8 +8,8 @@ namespace BIgExe_LTHSK
 {
     public class HoaDon
     {
-        public int maHD {  get; set; }
-        public int maDK { get; set; }
+        public string maHD {  get; set; }
+        public string maDK { get; set; }
         public DateTime ngayLap { get; set; }
         public float tongTien { get; set; }
 
@@ -17,7 +17,7 @@ namespace BIgExe_LTHSK
         {
         }
 
-        public HoaDon(int maHD, int maDK, DateTime ngayLap, float tongTien)
+        public HoaDon(string maHD, string maDK, DateTime ngayLap, float tongTien)
         {
             this.maHD = maHD;
             this.maDK = maDK;

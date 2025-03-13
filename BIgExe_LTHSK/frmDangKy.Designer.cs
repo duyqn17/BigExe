@@ -39,7 +39,7 @@
             this.txtXNMK = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboTenNV = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,21 +149,22 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Mã nhân viên:";
             // 
-            // comboBox1
+            // cboTenNV
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(417, 402);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(134, 37);
-            this.comboBox1.TabIndex = 5;
+            this.cboTenNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTenNV.FormattingEnabled = true;
+            this.cboTenNV.Location = new System.Drawing.Point(417, 402);
+            this.cboTenNV.Name = "cboTenNV";
+            this.cboTenNV.Size = new System.Drawing.Size(255, 37);
+            this.cboTenNV.TabIndex = 5;
+            this.cboTenNV.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // frmDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 599);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboTenNV);
             this.Controls.Add(this.btnDangKy);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -197,6 +198,6 @@
         private System.Windows.Forms.TextBox txtXNMK;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboTenNV;
     }
 }

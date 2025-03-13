@@ -8,7 +8,7 @@ namespace BIgExe_LTHSK
 {
     public class KhachHang
     {
-        public int maKH {  get; set; }
+        public string maKH {  get; set; }
         public string hoTen {  get; set; }
         public string soDienThoai { get; set; }
         public string email { get; set; }
@@ -20,7 +20,7 @@ namespace BIgExe_LTHSK
         {
         }
 
-        public KhachHang(int maKH, string hoTen, string soDienThoai, string email, bool gioiTinh, string diaChi, string loaiKhach)
+        public KhachHang(string maKH, string hoTen, string soDienThoai, string email, bool gioiTinh, string diaChi, string loaiKhach)
         {
             this.maKH = maKH;
             this.hoTen = hoTen;

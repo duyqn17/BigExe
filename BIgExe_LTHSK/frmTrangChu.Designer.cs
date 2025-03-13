@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblTenTK = new System.Windows.Forms.Label();
             this.btnBaoCao = new System.Windows.Forms.Button();
             this.btnThanhToanHD = new System.Windows.Forms.Button();
             this.btnDichVu = new System.Windows.Forms.Button();
@@ -39,18 +39,14 @@
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.grbChucNang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +62,7 @@
             // 
             // grbChucNang
             // 
-            this.grbChucNang.Controls.Add(this.pictureBox1);
+            this.grbChucNang.Controls.Add(this.lblTenTK);
             this.grbChucNang.Controls.Add(this.btnBaoCao);
             this.grbChucNang.Controls.Add(this.btnThanhToanHD);
             this.grbChucNang.Controls.Add(this.btnDichVu);
@@ -80,28 +76,27 @@
             this.grbChucNang.TabIndex = 0;
             this.grbChucNang.TabStop = false;
             // 
-            // pictureBox1
+            // lblTenTK
             // 
-            this.pictureBox1.Image = global::BIgExe_LTHSK.Properties.Resources.avaWomen;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(180, 180);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
+            this.lblTenTK.AutoSize = true;
+            this.lblTenTK.Location = new System.Drawing.Point(130, 42);
+            this.lblTenTK.Name = "lblTenTK";
+            this.lblTenTK.Size = new System.Drawing.Size(0, 16);
+            this.lblTenTK.TabIndex = 2;
             // 
             // btnBaoCao
             // 
-            this.btnBaoCao.Location = new System.Drawing.Point(12, 854);
+            this.btnBaoCao.Location = new System.Drawing.Point(12, 695);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(293, 88);
             this.btnBaoCao.TabIndex = 0;
             this.btnBaoCao.Text = "Báo Cáo Thống Kê";
             this.btnBaoCao.UseVisualStyleBackColor = true;
+            this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // btnThanhToanHD
             // 
-            this.btnThanhToanHD.Location = new System.Drawing.Point(12, 737);
+            this.btnThanhToanHD.Location = new System.Drawing.Point(12, 560);
             this.btnThanhToanHD.Name = "btnThanhToanHD";
             this.btnThanhToanHD.Size = new System.Drawing.Size(293, 88);
             this.btnThanhToanHD.TabIndex = 0;
@@ -111,7 +106,7 @@
             // 
             // btnDichVu
             // 
-            this.btnDichVu.Location = new System.Drawing.Point(12, 621);
+            this.btnDichVu.Location = new System.Drawing.Point(12, 444);
             this.btnDichVu.Name = "btnDichVu";
             this.btnDichVu.Size = new System.Drawing.Size(293, 88);
             this.btnDichVu.TabIndex = 0;
@@ -121,7 +116,7 @@
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.Location = new System.Drawing.Point(12, 498);
+            this.btnNhanVien.Location = new System.Drawing.Point(12, 321);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(293, 88);
             this.btnNhanVien.TabIndex = 0;
@@ -131,7 +126,7 @@
             // 
             // btnPhong
             // 
-            this.btnPhong.Location = new System.Drawing.Point(12, 381);
+            this.btnPhong.Location = new System.Drawing.Point(12, 204);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(293, 88);
             this.btnPhong.TabIndex = 0;
@@ -141,7 +136,7 @@
             // 
             // btnKhachHang
             // 
-            this.btnKhachHang.Location = new System.Drawing.Point(12, 258);
+            this.btnKhachHang.Location = new System.Drawing.Point(12, 81);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(293, 88);
             this.btnKhachHang.TabIndex = 0;
@@ -160,8 +155,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -171,34 +165,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // pictureBox3
+            // button1
             // 
-            this.pictureBox3.Image = global::BIgExe_LTHSK.Properties.Resources.signout;
-            this.pictureBox3.Location = new System.Drawing.Point(1533, 58);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::BIgExe_LTHSK.Properties.Resources.home;
-            this.pictureBox2.Location = new System.Drawing.Point(1485, 58);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.button1.Location = new System.Drawing.Point(1448, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 34);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Đăng xuất";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(670, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(429, 32);
+            this.label1.Size = new System.Drawing.Size(457, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Thuê Phòng Khách Sạn";
             // 
@@ -231,18 +214,18 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.IsMdiContainer = true;
             this.Name = "frmTrangChu";
-            this.Text = "frmTrangChu";
+            this.Text = "Trang Chủ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmTrangChu_FormClosed);
             this.Load += new System.EventHandler(this.frmTrangChu_Load);
             this.panel1.ResumeLayout(false);
             this.grbChucNang.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.grbChucNang.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
@@ -255,7 +238,6 @@
         private System.Windows.Forms.GroupBox grbChucNang;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnBaoCao;
         private System.Windows.Forms.Button btnThanhToanHD;
         private System.Windows.Forms.Button btnDichVu;
@@ -264,8 +246,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label lblTenTK;
+        private System.Windows.Forms.Button button1;
     }
 }

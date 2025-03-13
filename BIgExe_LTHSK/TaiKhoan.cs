@@ -8,8 +8,8 @@ namespace BIgExe_LTHSK
 {
     public class TaiKhoan
     {
-        public int maTK {  get; set; }
-        public int maNV { get; set; }
+        public string maTK {  get; set; }
+        public string maNV { get; set; }
         public string tenTK { get; set; }
         public string matKhau { get; set; }
         public string email { get; set; }
@@ -24,7 +24,7 @@ namespace BIgExe_LTHSK
             this.matKhau = matKhau;
         }
 
-        public TaiKhoan(int maTK, string tenTK, string matKhau, string email)
+        public TaiKhoan(string maTK, string tenTK, string matKhau, string email)
         {
             this.maTK = maTK;
             this.tenTK = tenTK;

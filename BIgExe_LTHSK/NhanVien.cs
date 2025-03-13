@@ -8,7 +8,7 @@ namespace BIgExe_LTHSK
 {
     public class NhanVien
     {
-        public int maNV {  get; set; }
+        public string maNV {  get; set; }
         public string tenNV { get; set; }
         public string chucVu { get; set; }
         public string sdt {  get; set; }
@@ -19,7 +19,7 @@ namespace BIgExe_LTHSK
         {
         }
 
-        public NhanVien(int maNV, string tenNV, string chucVu, string sdt, string email, float luong)
+        public NhanVien(string maNV, string tenNV, string chucVu, string sdt, string email, float luong)
         {
             this.maNV = maNV;
             this.tenNV = tenNV;

@@ -36,6 +36,7 @@ namespace BIgExe_LTHSK
         Modify modify = new Modify();
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            
             string tenTK = txtTenDN.Text;
             string matKhau = txtMatKhau.Text;
             if (tenTK.Trim() == "")
@@ -58,9 +59,10 @@ namespace BIgExe_LTHSK
                 {
                     //lblThongbaodangnhap.Text = "Đăng nhập thành công";
                     //lblThongbaodangnhap.Show();
-                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
+                    
                     frmTrangChu trangChu = new frmTrangChu();
                     trangChu.Show();
+                    this.Hide();
                 }
                 else
                 {
