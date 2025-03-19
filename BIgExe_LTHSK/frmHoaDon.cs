@@ -75,7 +75,7 @@ namespace BIgExe_LTHSK
                 ListViewItem item = new ListViewItem(hd.maHD.ToString());
                 item.SubItems.Add(hd.maDK.ToString());
                 item.SubItems.Add(hd.ngayLap.ToString());
-                item.SubItems.Add(hd.tongTien.ToString());
+                item.SubItems.Add(hd.tongTien.ToString("N2"));
       
                 lvHoaDon.Items.Add(item);
             }
@@ -198,6 +198,96 @@ namespace BIgExe_LTHSK
                     }
                 }
             }
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = Connection.getConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("sp_TimKiemHD", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+
+                    command.Parameters.AddWithValue("@madk", cboMaDK.SelectedItem != null ? cboMaDK.SelectedItem.ToString() : (object)DBNull.Value);
+                    //command.Parameters.AddWithValue("@ngaybatdau", dtpNgayBD.Checked ? (object)dtpNgayBD.Value : DBNull.Value);
+                    //command.Parameters.AddWithValue("@ngayketthuc", dtpNgayKT.Checked ? (object)dtpNgayKT.Value : DBNull.Value);
+                    command.Parameters.Add("@ngaybatdau", SqlDbType.DateTime).Value = dtpNgayBD.Checked ? (object)dtpNgayBD.Value : DBNull.Value;
+                    command.Parameters.Add("@ngayketthuc", SqlDbType.DateTime).Value = dtpNgayKT.Checked ? (object)dtpNgayKT.Value : DBNull.Value;
+
+                    //float tongTienMin, tongTienMax;
+                    //command.Parameters.AddWithValue("@tongtien_min", float.TryParse(txtTongTienMin.Text, out tongTienMin) ? (object)tongTienMin : DBNull.Value);
+                    //command.Parameters.AddWithValue("@tongtien_max", float.TryParse(txtTongTienMax.Text, out tongTienMax) ? (object)tongTienMax : DBNull.Value);
+
+                    float tongTienMin, tongTienMax;
+                    command.Parameters.Add("@tongtien_min", SqlDbType.Real).Value =
+                        float.TryParse(txtTongTienMin.Text, out tongTienMin) ? (object)tongTienMin : DBNull.Value;
+                    command.Parameters.Add("@tongtien_max", SqlDbType.Real).Value =
+                        float.TryParse(txtTongTienMax.Text, out tongTienMax) ? (object)tongTienMax : DBNull.Value;
+
+
+
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        var items = new List<ListViewItem>(); // Danh sách tạm để chứa dữ liệu mới
+
+                        while (reader.Read())
+                        {
+                            string maDangKy = reader["FK_sMaDangKy"].ToString();
+
+                            // Kiểm tra NULL trước khi lấy giá trị DATETIME
+                            DateTime ngayLap = reader.IsDBNull(reader.GetOrdinal("dNgayLap"))
+                                ? DateTime.MinValue
+                                : reader.GetDateTime(reader.GetOrdinal("dNgayLap"));
+                            string ngayLapFormatted = ngayLap == DateTime.MinValue ? "" : ngayLap.ToString("dd/MM/yyyy");
+
+                            // Kiểm tra NULL trước khi lấy giá trị REAL
+                            float tongTien = reader.IsDBNull(reader.GetOrdinal("fTongTien"))
+                                ? 0
+                                : reader.GetFloat(reader.GetOrdinal("fTongTien"));
+                            string tongTienFormatted = tongTien.ToString("N2"); // Định dạng 2 số thập phân
+
+                            ListViewItem item = new ListViewItem(reader.GetString(1));
+                            //item.SubItems.Add(ngayLapFormatted);
+                            //item.SubItems.Add(tongTienFormatted);
+                            //lvHoaDon.Items.Add(item);
+                            item.SubItems.Add(maDangKy);
+                            item.SubItems.Add(ngayLapFormatted);
+                            item.SubItems.Add(tongTienFormatted);
+                            items.Add(item); // Thêm vào danh sách tạm
+
+                        }
+
+                        lvHoaDon.BeginUpdate();
+                        lvHoaDon.Items.Clear();
+                        lvHoaDon.Items.AddRange(items.ToArray()); // Thêm tất cả vào một lần
+                        lvHoaDon.EndUpdate();
+                    }
+                }
+            }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadHoaDon();
+        }
+
+        private void ClearFields()
+        {
+            cboMaDK.SelectedIndex = -1;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClearFields();
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

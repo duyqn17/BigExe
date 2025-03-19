@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BIgExe_LTHSK
 {
-    public partial class frmBaoCaoThongKe : Form
+    public partial class frmChiTietHoaDon : Form
     {
-        public frmBaoCaoThongKe()
+        public frmChiTietHoaDon()
         {
             InitializeComponent();
+        }
+
+        private void frmChiTietHoaDon_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

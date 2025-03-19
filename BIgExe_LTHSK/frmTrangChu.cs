@@ -332,8 +332,51 @@ namespace BIgExe_LTHSK
 
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            frmChiTietDichVu frm = new frmChiTietDichVu();
-            OpenChildFormCTDV(frm);
+            frmBaoCaoHoaDon frm = new frmBaoCaoHoaDon();
+            OpenChildFormBCTK(frm);
+        }
+
+        public void OpenChildFormBCTK(Form childForm)
+        {
+            string formName = childForm.GetType().Name;
+
+            // Kiểm tra nếu form đã tồn tại trong Dictionary
+            if (openedForms.ContainsKey(formName))
+            {
+                // Ẩn form hiện tại (nếu có)
+                if (activeForm != null)
+                {
+                    activeForm.Hide();
+                }
+
+                // Hiển thị lại form cũ
+                activeForm = openedForms[formName];
+                activeForm.Show();
+                activeForm.BringToFront();
+            }
+            else
+            {
+                // Ẩn form hiện tại (nếu có)
+                if (activeForm != null)
+                {
+                    activeForm.Hide();
+                }
+
+                // Cấu hình Form con
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+
+                // Thêm vào Panel chứa
+                panel3.Controls.Add(childForm);
+
+                // Lưu vào Dictionary để tái sử dụng
+                openedForms[formName] = childForm;
+
+                activeForm = childForm;
+                childForm.Show();
+                childForm.BringToFront();
+            }
         }
 
         private void OpenChildFormCTDV(Form childForm)
@@ -377,6 +420,104 @@ namespace BIgExe_LTHSK
                 childForm.Show();
                 childForm.BringToFront();
             }
+        }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            ReportForm frm = new ReportForm();
+            OpenChildFormBCDT(frm);
+        }
+
+        private void OpenChildFormKHReport(Form childForm)
+        {
+            string formName = childForm.GetType().Name;
+
+            // Kiểm tra nếu form đã tồn tại trong Dictionary
+            if (openedForms.ContainsKey(formName))
+            {
+                // Ẩn form hiện tại (nếu có)
+                if (activeForm != null)
+                {
+                    activeForm.Hide();
+                }
+
+                // Hiển thị lại form cũ
+                activeForm = openedForms[formName];
+                activeForm.Show();
+                activeForm.BringToFront();
+            }
+            else
+            {
+                // Ẩn form hiện tại (nếu có)
+                if (activeForm != null)
+                {
+                    activeForm.Hide();
+                }
+
+                // Cấu hình Form con
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+
+                // Thêm vào Panel chứa
+                panel3.Controls.Add(childForm);
+
+                // Lưu vào Dictionary để tái sử dụng
+                openedForms[formName] = childForm;
+
+                activeForm = childForm;
+                childForm.Show();
+                childForm.BringToFront();
+            }
+        }
+
+        private void OpenChildFormBCDT(Form childForm)
+        {
+            string formName = childForm.GetType().Name;
+
+            // Kiểm tra nếu form đã tồn tại trong Dictionary
+            if (openedForms.ContainsKey(formName))
+            {
+                // Ẩn form hiện tại (nếu có)
+                if (activeForm != null)
+                {
+                    activeForm.Hide();
+                }
+
+                // Hiển thị lại form cũ
+                activeForm = openedForms[formName];
+                activeForm.Show();
+                activeForm.BringToFront();
+            }
+            else
+            {
+                // Ẩn form hiện tại (nếu có)
+                if (activeForm != null)
+                {
+                    activeForm.Hide();
+                }
+
+                // Cấu hình Form con
+                childForm.TopLevel = false;
+                childForm.FormBorderStyle = FormBorderStyle.None;
+                childForm.Dock = DockStyle.Fill;
+
+                // Thêm vào Panel chứa
+                panel3.Controls.Add(childForm);
+
+                // Lưu vào Dictionary để tái sử dụng
+                openedForms[formName] = childForm;
+
+                activeForm = childForm;
+                childForm.Show();
+                childForm.BringToFront();
+            }
+        }
+
+        private void btnCTDV_Click(object sender, EventArgs e)
+        {
+            frmChiTietDichVu frm = new frmChiTietDichVu();
+            OpenChildFormCTDV(frm);
         }
     }
 }

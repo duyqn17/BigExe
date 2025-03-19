@@ -35,7 +35,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.llbQuenMK = new System.Windows.Forms.LinkLabel();
-            this.llbDangKy = new System.Windows.Forms.LinkLabel();
             this.lblThongbaodangnhap = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -114,18 +113,6 @@
             this.llbQuenMK.Text = "Quên mật khẩu";
             this.llbQuenMK.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbQuenMK_LinkClicked);
             // 
-            // llbDangKy
-            // 
-            this.llbDangKy.AutoSize = true;
-            this.llbDangKy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llbDangKy.Location = new System.Drawing.Point(603, 413);
-            this.llbDangKy.Name = "llbDangKy";
-            this.llbDangKy.Size = new System.Drawing.Size(69, 20);
-            this.llbDangKy.TabIndex = 4;
-            this.llbDangKy.TabStop = true;
-            this.llbDangKy.Text = "Đăng ký";
-            this.llbDangKy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbDangKy_LinkClicked);
-            // 
             // lblThongbaodangnhap
             // 
             this.lblThongbaodangnhap.AutoSize = true;
@@ -143,7 +130,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(862, 506);
             this.Controls.Add(this.lblThongbaodangnhap);
-            this.Controls.Add(this.llbDangKy);
             this.Controls.Add(this.llbQuenMK);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.pictureBox1);
@@ -169,7 +155,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.LinkLabel llbQuenMK;
-        private System.Windows.Forms.LinkLabel llbDangKy;
         private System.Windows.Forms.Label lblThongbaodangnhap;
     }
 }

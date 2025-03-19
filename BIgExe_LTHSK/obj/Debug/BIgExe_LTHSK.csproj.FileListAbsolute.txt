@@ -34,5 +34,9 @@ D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\bin\Debug\CrystalDecisions.ReportAppServer.Commo
 D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\bin\Debug\stdole.dll
 D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\obj\Debug\BIgExe_L.4951C5D7.Up2Date
 D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\bin\Debug\CrystalDecisions.Windows.Forms.dll
-D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\obj\Debug\BIgExe_LTHSK.frmBaoCaoThongKe.resources
 D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\obj\Debug\BIgExe_LTHSK.frmChiTietDichVu.resources
+D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\obj\Debug\BIgExe_LTHSK.frmBaoCaoDoanhThu.resources
+D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\obj\Debug\BIgExe_LTHSK.frmBaoCaoHoaDon.resources
+D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\obj\Debug\BIgExe_LTHSK.frmChiTietHoaDon.resources
+D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\obj\Debug\BIgExe_LTHSK.frmHienKhachHangRpt.resources
+D:\c#\BIgExe_LTHSK\BIgExe_LTHSK\obj\Debug\BIgExe_LTHSK.ReportForm.resources

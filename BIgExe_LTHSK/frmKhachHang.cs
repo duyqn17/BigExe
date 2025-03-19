@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BIgExe_LTHSK
 {
@@ -55,7 +56,7 @@ namespace BIgExe_LTHSK
                 return;
             }
             ListViewItem lvi = lvKhachHang.SelectedItems[0];
-            
+            txtMaKH.Text = lvi.SubItems[0].Text; 
             txtHoTenKH.Text = lvi.SubItems[1].Text;
             txtSdtKH.Text = lvi.SubItems[2].Text;
             txtEmailKH.Text = lvi.SubItems[3].Text;
@@ -277,7 +278,7 @@ namespace BIgExe_LTHSK
 
         private void txtHoTenKH_TextChanged(object sender, EventArgs e)
         {
-            btnTim_Click(sender, e);
+            //btnTim_Click(sender, e);
         }
 
         private void txtSdtKH_Validating(object sender, CancelEventArgs e)
@@ -336,119 +337,7 @@ namespace BIgExe_LTHSK
         }
 
 
-        //private void btnTim_Click(object sender, EventArgs e)
-        //{
-        //    lvKhachHang.Items.Clear();
-        //    using (SqlConnection connection = Connection.getConnection())
-        //    {
-        //        connection.Open();
-        //        using (SqlCommand command = new SqlCommand("sp_TimKiemKH", connection))
-        //        {
-        //            command.CommandType = CommandType.StoredProcedure;
-        //            string hoTen = txtHoTenKH.Text.Trim();
-        //            command.Parameters.AddWithValue("@hoten", string.IsNullOrEmpty(hoTen) ? "" : hoTen);
-
-        //            //command.Parameters.AddWithValue("@hoten", string.IsNullOrWhiteSpace(txtHoTenKH.Text) ? (object)DBNull.Value : txtHoTenKH.Text);
-        //            command.Parameters.AddWithValue("@sdt", string.IsNullOrWhiteSpace(txtSdtKH.Text) ? (object)DBNull.Value : txtSdtKH.Text);
-        //            command.Parameters.AddWithValue("@email", string.IsNullOrWhiteSpace(txtEmailKH.Text) ? (object)DBNull.Value : txtEmailKH.Text);
-
-
-        //            if (rabNam.Checked)
-        //            {
-
-        //                command.Parameters.AddWithValue("@gioitinh", true);
-        //            }
-        //            else
-        //            {
-
-        //                command.Parameters.AddWithValue("@gioitinh", false);
-        //            }
-
-        //            command.Parameters.AddWithValue("@diachi", string.IsNullOrWhiteSpace(txtDiaChiKH.Text) ? (object)DBNull.Value : txtDiaChiKH.Text);
-
-        //            command.Parameters.AddWithValue("@loaikhach", cboLoaiKhach.SelectedItem == null ? (object)DBNull.Value : cboLoaiKhach.SelectedItem.ToString());
-
-
-        //            using (SqlDataReader reader = command.ExecuteReader())
-        //            {
-        //                while (reader.Read())
-        //                {
-        //                    ListViewItem item = new ListViewItem(reader["sMaKhach"].ToString()); // Cột ID
-        //                    item.SubItems.Add(reader["sHoTen"].ToString());  // Họ tên
-        //                    item.SubItems.Add(reader["sSoDienThoai"].ToString()); // Số điện thoại
-        //                    item.SubItems.Add(reader["sEmail"].ToString());  // Email
-        //                    bool gioiTinh = Convert.ToBoolean(reader["bGioiTinh"]);
-        //                    item.SubItems.Add(gioiTinh ? "Nam" : "Nữ");
-        //                    item.SubItems.Add(reader["sDiaChi"].ToString());  // Địa chỉ
-        //                    item.SubItems.Add(reader["sLoaiKhach"].ToString());  // Loại khách
-
-        //                    // Thêm vào ListView
-        //                    lvKhachHang.Items.Add(item);
-        //                    ClearFields();
-        //                }
-        //            }
-
-        //        }
-        //        connection.Close();
-        //    }
-        //}
-
-        //private void btnTim_Click(object sender, EventArgs e)
-        //{
-        //    lvKhachHang.Items.Clear();
-        //    using (SqlConnection connection = Connection.getConnection())
-        //    {
-        //        connection.Open();
-        //        using (SqlCommand command = new SqlCommand("sp_TimKiemKH", connection))
-        //        {
-        //            command.CommandType = CommandType.StoredProcedure;
-
-        //            string hoTen = txtHoTenKH.Text.Trim();
-        //            command.Parameters.AddWithValue("@hoten", string.IsNullOrWhiteSpace(hoTen) ? (object)DBNull.Value : hoTen);
-        //            command.Parameters.AddWithValue("@sdt", string.IsNullOrWhiteSpace(txtSdtKH.Text) ? (object)DBNull.Value : txtSdtKH.Text);
-        //            command.Parameters.AddWithValue("@email", string.IsNullOrWhiteSpace(txtEmailKH.Text) ? (object)DBNull.Value : txtEmailKH.Text);
-
-        //            // Kiểm tra giới tính
-        //            if (rabNam.Checked)
-        //            {
-        //                command.Parameters.AddWithValue("@gioitinh", true);
-        //            }
-        //            else if (rabNu.Checked)
-        //            {
-        //                command.Parameters.AddWithValue("@gioitinh", false);
-        //            }
-        //            else
-        //            {
-        //                command.Parameters.AddWithValue("@gioitinh", (object)DBNull.Value);  // NULL nếu không có lựa chọn
-        //            }
-
-        //            command.Parameters.AddWithValue("@diachi", string.IsNullOrWhiteSpace(txtDiaChiKH.Text) ? (object)DBNull.Value : txtDiaChiKH.Text);
-        //            command.Parameters.AddWithValue("@loaikhach", cboLoaiKhach.SelectedItem == null ? (object)DBNull.Value : cboLoaiKhach.SelectedItem.ToString());
-
-        //            using (SqlDataReader reader = command.ExecuteReader())
-        //            {
-
-        //                while (reader.Read())
-        //                {
-        //                    ListViewItem item = new ListViewItem(reader["sMaKhach"].ToString()); // Cột ID
-        //                    item.SubItems.Add(reader["sHoTen"].ToString());  // Họ tên
-        //                    item.SubItems.Add(reader["sSoDienThoai"].ToString()); // Số điện thoại
-        //                    item.SubItems.Add(reader["sEmail"].ToString());  // Email
-        //                    bool gioiTinh = Convert.ToBoolean(reader["bGioiTinh"]);
-        //                    item.SubItems.Add(gioiTinh ? "Nam" : "Nữ");
-        //                    item.SubItems.Add(reader["sDiaChi"].ToString());  // Địa chỉ
-        //                    item.SubItems.Add(reader["sLoaiKhach"].ToString());  // Loại khách
-
-        //                    // Thêm vào ListView
-        //                    lvKhachHang.Items.Add(item);
-        //                }
-        //                ClearFields();
-
-        //            }
-        //        }
-        //        connection.Close();
-        //    }
-        //}
+        
 
         private void btnTim_Click(object sender, EventArgs e)
         {
@@ -501,6 +390,36 @@ namespace BIgExe_LTHSK
             }
         }
 
+        //private DataTable BangKhachHang()
+        //{
+        //    DataTable dt = new DataTable();
+        //    dt.Columns.Add("Mã khách hàng");
+        //    dt.Columns.Add("Tên khách hàng");
+        //    dt.Columns.Add("Số điện thoại");
+        //    dt.Columns.Add("Email");
+        //    dt.Columns.Add("Giới tính");
+        //    dt.Columns.Add("Địa chỉ");
+        //    return dt;
+        //}
+
+        //public DataTable GetKhachHangFromLV()
+        //{
+        //    DataTable dt = BangKhachHang();
+        //    foreach(ListViewItem lv in lvKhachHang.SelectedItems)
+        //    {
+        //        DataRow row = dt.NewRow();
+        //        row["Mã khách hàng"] = lv.SubItems[0].Text;
+        //        row["Tên khách hàng"] = lv.SubItems[1].Text;
+        //        row["Số điện thoại"] = lv.SubItems[2].Text;
+        //        row["Email"] = lv.SubItems[3].Text;
+        //        row["Giới tính"] = lv.SubItems[4].Text;
+        //        row["Địa chỉ"] = lv.SubItems[5].Text;
+
+        //        dt.Rows.Add(row);
+        //    }
+        //    return dt;
+        //}
+
         private void ClearFields()
         {
             txtHoTenKH.Text = "";
@@ -530,6 +449,66 @@ namespace BIgExe_LTHSK
         private void btnTim_TextChanged(object sender, EventArgs e)
         {
             //btnTim_Click(sender, e);
+        }
+
+        private void txtSdtKH_TextChanged(object sender, EventArgs e)
+        {
+            //btnTim_Click(sender, e);
+        }
+
+        private void txtEmailKH_TextChanged(object sender, EventArgs e)
+        {
+            //btnTim_Click(sender,e);
+        }
+
+        private void txtDiaChiKH_TextChanged(object sender, EventArgs e)
+        {
+            //btnTim_Click(sender, e) ;
+        }
+
+        private void groupBox2_TextChanged(object sender, EventArgs e)
+        {
+            //btnTim_Click(sender,e);
+        }
+
+        private void cboLoaiKhach_TextChanged(object sender, EventArgs e)
+        {
+            //btnTim_Click(sender, e);
+        }
+
+        //lấy danh sách mã khách được chon
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            List<string> selectedMaKH = new List<string>();
+
+            foreach (ListViewItem item in lvKhachHang.SelectedItems)
+            {
+                selectedMaKH.Add(item.SubItems[0].Text); // Giả sử mã KH nằm ở cột 0
+            }
+
+            if (lvKhachHang.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn ít nhất một khách hàng!", "Thông báo");
+                return;
+            }
+            string maKH = txtMaKH.Text.Trim();
+
+            
+
+            frmHienKhachHangRpt frm = new frmHienKhachHangRpt();
+            if (string.IsNullOrEmpty(txtMaKH.Text))
+            {
+                frm.maKH = null;
+            }
+            else
+            {
+                frm.maKH = txtMaKH.Text;
+            }
+
+            frm.Show();
+
+           
         }
     }
 }

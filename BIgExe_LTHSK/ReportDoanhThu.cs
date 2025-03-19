@@ -16,14 +16,14 @@ namespace BIgExe_LTHSK {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class BaoCaoThongKe : ReportClass {
+    public class ReportDoanhThu : ReportClass {
         
-        public BaoCaoThongKe() {
+        public ReportDoanhThu() {
         }
         
         public override string ResourceName {
             get {
-                return "BaoCaoThongKe.rpt";
+                return "ReportDoanhThu.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace BIgExe_LTHSK {
         
         public override string FullResourceName {
             get {
-                return "BIgExe_LTHSK.BaoCaoThongKe.rpt";
+                return "BIgExe_LTHSK.ReportDoanhThu.rpt";
             }
             set {
                 // Do nothing
@@ -87,12 +87,28 @@ namespace BIgExe_LTHSK {
                 return this.ReportDefinition.Sections[4];
             }
         }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_StartDate {
+            get {
+                return this.DataDefinition.ParameterFields[0];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_EndDate {
+            get {
+                return this.DataDefinition.ParameterFields[1];
+            }
+        }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBaoCaoThongKe : Component, ICachedReport {
+    public class CachedReportDoanhThu : Component, ICachedReport {
         
-        public CachedBaoCaoThongKe() {
+        public CachedReportDoanhThu() {
         }
         
         [Browsable(false)]
@@ -129,7 +145,7 @@ namespace BIgExe_LTHSK {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            BaoCaoThongKe rpt = new BaoCaoThongKe();
+            ReportDoanhThu rpt = new ReportDoanhThu();
             rpt.Site = this.Site;
             return rpt;
         }

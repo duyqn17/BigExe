@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
             this.txtMaPhong = new System.Windows.Forms.TextBox();
             this.btnDatPhong = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +49,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lvDatPhong = new System.Windows.Forms.ListView();
+            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,7 +63,10 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.chkLocNgayNhan = new System.Windows.Forms.CheckBox();
+            this.chkLocNgayTra = new System.Windows.Forms.CheckBox();
+            this.btnReset = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -81,6 +87,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnReset);
+            this.groupBox1.Controls.Add(this.chkLocNgayTra);
+            this.groupBox1.Controls.Add(this.chkLocNgayNhan);
+            this.groupBox1.Controls.Add(this.btnLoad);
+            this.groupBox1.Controls.Add(this.btnIn);
+            this.groupBox1.Controls.Add(this.btnTim);
             this.groupBox1.Controls.Add(this.txtMaPhong);
             this.groupBox1.Controls.Add(this.btnDatPhong);
             this.groupBox1.Controls.Add(this.label1);
@@ -102,6 +114,28 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // btnIn
+            // 
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Location = new System.Drawing.Point(56, 708);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(139, 40);
+            this.btnIn.TabIndex = 6;
+            this.btnIn.Text = "In";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(56, 631);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(139, 40);
+            this.btnTim.TabIndex = 6;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // txtMaPhong
             // 
             this.txtMaPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -110,13 +144,14 @@
             this.txtMaPhong.Name = "txtMaPhong";
             this.txtMaPhong.Size = new System.Drawing.Size(274, 33);
             this.txtMaPhong.TabIndex = 5;
+            this.txtMaPhong.TextChanged += new System.EventHandler(this.txtMaPhong_TextChanged);
             // 
             // btnDatPhong
             // 
             this.btnDatPhong.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatPhong.Location = new System.Drawing.Point(142, 673);
+            this.btnDatPhong.Location = new System.Drawing.Point(338, 631);
             this.btnDatPhong.Name = "btnDatPhong";
-            this.btnDatPhong.Size = new System.Drawing.Size(211, 62);
+            this.btnDatPhong.Size = new System.Drawing.Size(139, 40);
             this.btnDatPhong.TabIndex = 4;
             this.btnDatPhong.Text = "Đặt phòng";
             this.btnDatPhong.UseVisualStyleBackColor = true;
@@ -159,6 +194,7 @@
             this.cboMaKhach.Name = "cboMaKhach";
             this.cboMaKhach.Size = new System.Drawing.Size(274, 33);
             this.cboMaKhach.TabIndex = 2;
+            this.cboMaKhach.TextChanged += new System.EventHandler(this.cboMaKhach_TextChanged);
             // 
             // label2
             // 
@@ -222,6 +258,7 @@
             this.cboTrangThai.Size = new System.Drawing.Size(274, 33);
             this.cboTrangThai.TabIndex = 2;
             this.cboTrangThai.SelectedIndexChanged += new System.EventHandler(this.cboTrangThai_SelectedIndexChanged);
+            this.cboTrangThai.TextChanged += new System.EventHandler(this.cboTrangThai_TextChanged);
             // 
             // cboMaNV
             // 
@@ -231,6 +268,7 @@
             this.cboMaNV.Name = "cboMaNV";
             this.cboMaNV.Size = new System.Drawing.Size(274, 33);
             this.cboMaNV.TabIndex = 2;
+            this.cboMaNV.TextChanged += new System.EventHandler(this.cboMaNV_TextChanged);
             // 
             // label4
             // 
@@ -285,6 +323,11 @@
             this.lvDatPhong.UseCompatibleStateImageBehavior = false;
             this.lvDatPhong.View = System.Windows.Forms.View.Details;
             this.lvDatPhong.SelectedIndexChanged += new System.EventHandler(this.lvDatPhong_SelectedIndexChanged);
+            // 
+            // columnHeader11
+            // 
+            this.columnHeader11.Text = "Mã Đặt Phòng";
+            this.columnHeader11.Width = 210;
             // 
             // columnHeader1
             // 
@@ -377,10 +420,45 @@
             this.columnHeader9.Text = "Tình Trạng";
             this.columnHeader9.Width = 400;
             // 
-            // columnHeader11
+            // btnLoad
             // 
-            this.columnHeader11.Text = "Mã Đặt Phòng";
-            this.columnHeader11.Width = 210;
+            this.btnLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Location = new System.Drawing.Point(338, 708);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(139, 40);
+            this.btnLoad.TabIndex = 7;
+            this.btnLoad.Text = "Tải lại";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // chkLocNgayNhan
+            // 
+            this.chkLocNgayNhan.AutoSize = true;
+            this.chkLocNgayNhan.Location = new System.Drawing.Point(27, 409);
+            this.chkLocNgayNhan.Name = "chkLocNgayNhan";
+            this.chkLocNgayNhan.Size = new System.Drawing.Size(18, 17);
+            this.chkLocNgayNhan.TabIndex = 8;
+            this.chkLocNgayNhan.UseVisualStyleBackColor = true;
+            // 
+            // chkLocNgayTra
+            // 
+            this.chkLocNgayTra.AutoSize = true;
+            this.chkLocNgayTra.Location = new System.Drawing.Point(27, 490);
+            this.chkLocNgayTra.Name = "chkLocNgayTra";
+            this.chkLocNgayTra.Size = new System.Drawing.Size(18, 17);
+            this.chkLocNgayTra.TabIndex = 8;
+            this.chkLocNgayTra.UseVisualStyleBackColor = true;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Location = new System.Drawing.Point(56, 778);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(421, 40);
+            this.btnReset.TabIndex = 9;
+            this.btnReset.Text = "Xóa các trường đã nhập";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // frmPhong
             // 
@@ -439,5 +517,11 @@
         private System.Windows.Forms.TextBox txtMaPhong;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.CheckBox chkLocNgayTra;
+        private System.Windows.Forms.CheckBox chkLocNgayNhan;
+        private System.Windows.Forms.Button btnReset;
     }
 }

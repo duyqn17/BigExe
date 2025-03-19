@@ -30,7 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
-            this.lblTenTK = new System.Windows.Forms.Label();
+            this.btnCTDV = new System.Windows.Forms.Button();
+            this.btnDoanhThu = new System.Windows.Forms.Button();
             this.btnBaoCao = new System.Windows.Forms.Button();
             this.btnThanhToanHD = new System.Windows.Forms.Button();
             this.btnDichVu = new System.Windows.Forms.Button();
@@ -62,7 +63,8 @@
             // 
             // grbChucNang
             // 
-            this.grbChucNang.Controls.Add(this.lblTenTK);
+            this.grbChucNang.Controls.Add(this.btnCTDV);
+            this.grbChucNang.Controls.Add(this.btnDoanhThu);
             this.grbChucNang.Controls.Add(this.btnBaoCao);
             this.grbChucNang.Controls.Add(this.btnThanhToanHD);
             this.grbChucNang.Controls.Add(this.btnDichVu);
@@ -76,27 +78,39 @@
             this.grbChucNang.TabIndex = 0;
             this.grbChucNang.TabStop = false;
             // 
-            // lblTenTK
+            // btnCTDV
             // 
-            this.lblTenTK.AutoSize = true;
-            this.lblTenTK.Location = new System.Drawing.Point(130, 42);
-            this.lblTenTK.Name = "lblTenTK";
-            this.lblTenTK.Size = new System.Drawing.Size(0, 16);
-            this.lblTenTK.TabIndex = 2;
+            this.btnCTDV.Location = new System.Drawing.Point(12, 791);
+            this.btnCTDV.Name = "btnCTDV";
+            this.btnCTDV.Size = new System.Drawing.Size(293, 88);
+            this.btnCTDV.TabIndex = 4;
+            this.btnCTDV.Text = "Chi Tiết Dịch Vụ";
+            this.btnCTDV.UseVisualStyleBackColor = true;
+            this.btnCTDV.Click += new System.EventHandler(this.btnCTDV_Click);
+            // 
+            // btnDoanhThu
+            // 
+            this.btnDoanhThu.Location = new System.Drawing.Point(12, 917);
+            this.btnDoanhThu.Name = "btnDoanhThu";
+            this.btnDoanhThu.Size = new System.Drawing.Size(293, 88);
+            this.btnDoanhThu.TabIndex = 3;
+            this.btnDoanhThu.Text = "Báo Cáo Doanh Thu";
+            this.btnDoanhThu.UseVisualStyleBackColor = true;
+            this.btnDoanhThu.Click += new System.EventHandler(this.btnDoanhThu_Click);
             // 
             // btnBaoCao
             // 
-            this.btnBaoCao.Location = new System.Drawing.Point(12, 695);
+            this.btnBaoCao.Location = new System.Drawing.Point(6, 665);
             this.btnBaoCao.Name = "btnBaoCao";
             this.btnBaoCao.Size = new System.Drawing.Size(293, 88);
             this.btnBaoCao.TabIndex = 0;
-            this.btnBaoCao.Text = "Báo Cáo Thống Kê";
+            this.btnBaoCao.Text = "Báo Cáo Hóa Đơn";
             this.btnBaoCao.UseVisualStyleBackColor = true;
             this.btnBaoCao.Click += new System.EventHandler(this.btnBaoCao_Click);
             // 
             // btnThanhToanHD
             // 
-            this.btnThanhToanHD.Location = new System.Drawing.Point(12, 560);
+            this.btnThanhToanHD.Location = new System.Drawing.Point(6, 539);
             this.btnThanhToanHD.Name = "btnThanhToanHD";
             this.btnThanhToanHD.Size = new System.Drawing.Size(293, 88);
             this.btnThanhToanHD.TabIndex = 0;
@@ -106,7 +120,7 @@
             // 
             // btnDichVu
             // 
-            this.btnDichVu.Location = new System.Drawing.Point(12, 444);
+            this.btnDichVu.Location = new System.Drawing.Point(6, 413);
             this.btnDichVu.Name = "btnDichVu";
             this.btnDichVu.Size = new System.Drawing.Size(293, 88);
             this.btnDichVu.TabIndex = 0;
@@ -116,7 +130,7 @@
             // 
             // btnNhanVien
             // 
-            this.btnNhanVien.Location = new System.Drawing.Point(12, 321);
+            this.btnNhanVien.Location = new System.Drawing.Point(6, 287);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Size = new System.Drawing.Size(293, 88);
             this.btnNhanVien.TabIndex = 0;
@@ -126,7 +140,7 @@
             // 
             // btnPhong
             // 
-            this.btnPhong.Location = new System.Drawing.Point(12, 204);
+            this.btnPhong.Location = new System.Drawing.Point(6, 161);
             this.btnPhong.Name = "btnPhong";
             this.btnPhong.Size = new System.Drawing.Size(293, 88);
             this.btnPhong.TabIndex = 0;
@@ -136,7 +150,7 @@
             // 
             // btnKhachHang
             // 
-            this.btnKhachHang.Location = new System.Drawing.Point(12, 81);
+            this.btnKhachHang.Location = new System.Drawing.Point(6, 35);
             this.btnKhachHang.Name = "btnKhachHang";
             this.btnKhachHang.Size = new System.Drawing.Size(293, 88);
             this.btnKhachHang.TabIndex = 0;
@@ -222,7 +236,6 @@
             this.Load += new System.EventHandler(this.frmTrangChu_Load);
             this.panel1.ResumeLayout(false);
             this.grbChucNang.ResumeLayout(false);
-            this.grbChucNang.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -247,7 +260,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label lblTenTK;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDoanhThu;
+        private System.Windows.Forms.Button btnCTDV;
     }
 }

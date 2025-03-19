@@ -51,6 +51,7 @@
             this.txtHoTenKH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnIn = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lvKhachHang = new System.Windows.Forms.ListView();
@@ -62,6 +63,9 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -141,6 +145,7 @@
             this.cboLoaiKhach.Name = "cboLoaiKhach";
             this.cboLoaiKhach.Size = new System.Drawing.Size(209, 39);
             this.cboLoaiKhach.TabIndex = 5;
+            this.cboLoaiKhach.TextChanged += new System.EventHandler(this.cboLoaiKhach_TextChanged);
             // 
             // btnSuaKH
             // 
@@ -184,6 +189,7 @@
             this.groupBox2.Size = new System.Drawing.Size(209, 38);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
+            this.groupBox2.TextChanged += new System.EventHandler(this.groupBox2_TextChanged);
             this.groupBox2.Validating += new System.ComponentModel.CancelEventHandler(this.groupBox2_Validating);
             // 
             // rabNu
@@ -234,6 +240,7 @@
             this.txtDiaChiKH.Name = "txtDiaChiKH";
             this.txtDiaChiKH.Size = new System.Drawing.Size(760, 38);
             this.txtDiaChiKH.TabIndex = 1;
+            this.txtDiaChiKH.TextChanged += new System.EventHandler(this.txtDiaChiKH_TextChanged);
             this.txtDiaChiKH.Validating += new System.ComponentModel.CancelEventHandler(this.txtDiaChiKH_Validating);
             // 
             // label4
@@ -252,6 +259,7 @@
             this.txtEmailKH.Name = "txtEmailKH";
             this.txtEmailKH.Size = new System.Drawing.Size(760, 38);
             this.txtEmailKH.TabIndex = 1;
+            this.txtEmailKH.TextChanged += new System.EventHandler(this.txtEmailKH_TextChanged);
             this.txtEmailKH.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmailKH_Validating);
             // 
             // label3
@@ -270,6 +278,7 @@
             this.txtSdtKH.Name = "txtSdtKH";
             this.txtSdtKH.Size = new System.Drawing.Size(760, 38);
             this.txtSdtKH.TabIndex = 1;
+            this.txtSdtKH.TextChanged += new System.EventHandler(this.txtSdtKH_TextChanged);
             this.txtSdtKH.Validating += new System.ComponentModel.CancelEventHandler(this.txtSdtKH_Validating);
             // 
             // label2
@@ -303,12 +312,26 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txtMaKH);
+            this.panel2.Controls.Add(this.btnIn);
             this.panel2.Controls.Add(this.btnTim);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 401);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1573, 112);
             this.panel2.TabIndex = 1;
+            // 
+            // btnIn
+            // 
+            this.btnIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Location = new System.Drawing.Point(858, 47);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(184, 32);
+            this.btnIn.TabIndex = 3;
+            this.btnIn.Text = "In khách hàng";
+            this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnTim
             // 
@@ -393,6 +416,28 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtMaKH
+            // 
+            this.txtMaKH.Location = new System.Drawing.Point(706, 55);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(100, 22);
+            this.txtMaKH.TabIndex = 4;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(598, 58);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 16);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Mã Khách Hàng";
+            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -410,6 +455,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -451,5 +497,9 @@
         private System.Windows.Forms.ComboBox cboLoaiKhach;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

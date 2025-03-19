@@ -229,5 +229,127 @@ namespace BIgExe_LTHSK
                 conn.Close();
             }
         }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = Connection.getConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("sp_TimKiemDP", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    
+                    if (cboMaKhach.SelectedItem == null || string.IsNullOrWhiteSpace(cboMaKhach.Text))
+                        command.Parameters.AddWithValue("@makh", DBNull.Value);
+                    else
+                        command.Parameters.AddWithValue("@makh", cboMaKhach.SelectedItem.ToString());
+
+
+                    // Mã phòng
+                    command.Parameters.AddWithValue("@maphong", string.IsNullOrWhiteSpace(txtMaPhong.Text) ? (object)DBNull.Value : txtMaPhong.Text);
+
+                    // Mã nhân viên
+                    if (cboMaNV.SelectedItem == null || string.IsNullOrWhiteSpace(cboMaNV.Text))
+                        command.Parameters.AddWithValue("@manv", DBNull.Value);
+                    else
+                        command.Parameters.AddWithValue("@manv", cboMaNV.SelectedItem.ToString());
+
+                    //// Ngày nhận
+                    //if (dtpNgayNhan.Checked)
+                    //    command.Parameters.AddWithValue("@ngaynhan", dtpNgayNhan.Value.Date);
+                    //else
+                    //    command.Parameters.AddWithValue("@ngaynhan", DBNull.Value);
+
+                    //// Ngày trả
+                    //if (dtpNgayTra.Checked)
+                    //    command.Parameters.AddWithValue("@ngaytra", dtpNgayTra.Value.Date);
+                    //else
+                    //    command.Parameters.AddWithValue("@ngaytra", DBNull.Value);
+                    if (chkLocNgayNhan.Checked)
+                        command.Parameters.AddWithValue("@ngaynhan", dtpNgayNhan.Value.Date);
+                    else
+                        command.Parameters.AddWithValue("@ngaynhan", DBNull.Value);
+
+                    if (chkLocNgayTra.Checked)
+                        command.Parameters.AddWithValue("@ngaytra", dtpNgayTra.Value.Date);
+                    else
+                        command.Parameters.AddWithValue("@ngaytra", DBNull.Value);
+
+
+                    // Trạng thái
+                    if (string.IsNullOrWhiteSpace(cboTrangThai.Text))
+                        command.Parameters.AddWithValue("@trangthai", DBNull.Value);
+                    else
+                        command.Parameters.AddWithValue("@trangthai", cboTrangThai.Text);
+
+                    // Đọc dữ liệu
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        var items = new List<ListViewItem>();
+
+                        while (reader.Read())
+                        {
+                            ListViewItem item = new ListViewItem(reader["sMaDangKy"].ToString());
+                            item.SubItems.Add(reader["FK_sMaKhach"].ToString());
+                            item.SubItems.Add(reader["FK_sMaPhong"].ToString());
+                            item.SubItems.Add(reader["FK_sMaNhanVien"].ToString());
+                            item.SubItems.Add(Convert.ToDateTime(reader["dNgayNhan"]).ToString("dd/MM/yyyy"));
+                            item.SubItems.Add(Convert.ToDateTime(reader["dNgayTra"]).ToString("dd/MM/yyyy"));
+                            item.SubItems.Add(reader["sTrangThai"].ToString());
+
+                            items.Add(item);
+                        }
+
+                        lvDatPhong.BeginUpdate();
+                        lvDatPhong.Items.Clear();
+                        lvDatPhong.Items.AddRange(items.ToArray());
+                        lvDatPhong.EndUpdate();
+                    }
+                }
+            }
+        }
+
+
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadDatPhong();
+        }
+
+        private void cboMaKhach_TextChanged(object sender, EventArgs e)
+        {
+            btnTim_Click(sender, e);
+        }
+
+        private void txtMaPhong_TextChanged(object sender, EventArgs e)
+        {
+            btnTim_Click(sender, e);
+        }
+
+        private void cboMaNV_TextChanged(object sender, EventArgs e)
+        {
+            btnTim_Click(sender, e);
+        }
+
+        private void cboTrangThai_TextChanged(object sender, EventArgs e)
+        {
+            btnTim_Click(sender, e);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cboMaKhach.SelectedIndex = -1;
+            cboMaNV.SelectedIndex = -1;
+            txtMaPhong.Text = "";
+            dtpNgayNhan.Checked = false;
+            dtpNgayTra.Checked = false;
+
+        }
     }
 }

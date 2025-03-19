@@ -3,36 +3,56 @@
   "WorkspaceRootPath": "D:\\c#\\BIgExe_LTHSK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmchitietdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmchitietdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|D:\\c#\\BIgExe_LTHSK\\bigexe_lthsk\\frmchitietdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmchitietdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmhoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|D:\\c#\\BIgExe_LTHSK\\bigexe_lthsk\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmbaocaohoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmbaocaohoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|D:\\c#\\BIgExe_LTHSK\\bigexe_lthsk\\frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmdichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmchitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|D:\\c#\\BIgExe_LTHSK\\bigexe_lthsk\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|d:\\c#\\bigexe_lthsk\\bigexe_lthsk\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmtrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|D:\\c#\\BIgExe_LTHSK\\bigexe_lthsk\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\modify.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|D:\\c#\\BIgExe_LTHSK\\bigexe_lthsk\\frmbaocaothongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{51C47750-A073-42FA-9F03-9CA5843260ED}|BIgExe_LTHSK\\BIgExe_LTHSK.csproj|solutionrelative:bigexe_lthsk\\frmbaocaothongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,21 +62,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Modify.cs",
-              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\Modify.cs",
-              "RelativeDocumentMoniker": "BIgExe_LTHSK\\Modify.cs",
-              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\Modify.cs",
-              "RelativeToolTip": "BIgExe_LTHSK\\Modify.cs",
-              "ViewState": "AgIAAOMAAAAAAAAAAAAAwOAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-08T13:01:02.606Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
@@ -68,87 +75,162 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmKhachHang.cs",
-              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs",
-              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmKhachHang.cs",
-              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs",
-              "RelativeToolTip": "BIgExe_LTHSK\\frmKhachHang.cs",
-              "ViewState": "AgIAAA0BAAAAAAAAAAAwwB0BAAANAAAAAAAAAA==",
+              "Title": "frmDangKy.cs",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDangKy.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmDangKy.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDangKy.cs",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmDangKy.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAuwFsAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T12:58:59.473Z",
+              "WhenOpened": "2025-03-19T15:18:56.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmKhachHang.cs [Design]",
-              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs",
-              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmKhachHang.cs",
-              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs [Design]",
-              "RelativeToolTip": "BIgExe_LTHSK\\frmKhachHang.cs [Design]",
+              "Title": "frmDangKy.cs [Design]",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDangKy.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmDangKy.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDangKy.cs [Design]",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmDangKy.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T12:58:56.021Z",
+              "WhenOpened": "2025-03-19T15:18:55.53Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HoaDon.cs",
-              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\HoaDon.cs",
-              "RelativeDocumentMoniker": "BIgExe_LTHSK\\HoaDon.cs",
-              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\HoaDon.cs",
-              "RelativeToolTip": "BIgExe_LTHSK\\HoaDon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-13T09:09:47.083Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "frmHoaDon.cs [Design]",
               "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmHoaDon.cs",
               "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmHoaDon.cs",
               "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmHoaDon.cs [Design]",
               "RelativeToolTip": "BIgExe_LTHSK\\frmHoaDon.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T06:41:43.784Z",
+              "WhenOpened": "2025-03-19T13:46:01.345Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "frmDichVu.cs [Design]",
-              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDichVu.cs",
-              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmDichVu.cs",
-              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDichVu.cs [Design]",
-              "RelativeToolTip": "BIgExe_LTHSK\\frmDichVu.cs [Design]",
+              "Title": "frmKhachHang.cs",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmKhachHang.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmKhachHang.cs",
+              "ViewState": "AgIAAN4BAAAAAAAAAAAIwOIBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T04:47:36.255Z",
+              "WhenOpened": "2025-03-19T12:45:10.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmKhachHang.cs [Design]",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmKhachHang.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmKhachHang.cs [Design]",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmKhachHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T12:56:50.37Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "frmChiTietDichVu.cs [Design]",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmChiTietDichVu.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmChiTietDichVu.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmChiTietDichVu.cs [Design]",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmChiTietDichVu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T08:46:51.459Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmChiTietDichVu.cs",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmChiTietDichVu.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmChiTietDichVu.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmChiTietDichVu.cs",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmChiTietDichVu.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAIwHoAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T08:47:22.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmChiTietHoaDon.cs [Design]",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmChiTietHoaDon.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmChiTietHoaDon.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmChiTietHoaDon.cs [Design]",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmChiTietHoaDon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:50:09.333Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmBaoCaoHoaDon.cs [Design]",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmBaoCaoHoaDon.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmBaoCaoHoaDon.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmBaoCaoHoaDon.cs [Design]",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmBaoCaoHoaDon.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T13:50:18.56Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmNhanVien.cs",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmNhanVien.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmNhanVien.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmNhanVien.cs",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmNhanVien.cs",
+              "ViewState": "AgIAACsBAAAAAAAAAAA4wDcBAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T12:56:09.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmNhanVien.cs [Design]",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmNhanVien.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmNhanVien.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmNhanVien.cs [Design]",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmNhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T12:56:08.533Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmDangNhap.cs [Design]",
+              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDangNhap.cs",
+              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmDangNhap.cs",
+              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmDangNhap.cs [Design]",
+              "RelativeToolTip": "BIgExe_LTHSK\\frmDangNhap.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T12:45:41.536Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "frmTrangChu.cs [Design]",
               "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmTrangChu.cs",
               "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmTrangChu.cs",
               "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmTrangChu.cs [Design]",
               "RelativeToolTip": "BIgExe_LTHSK\\frmTrangChu.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T06:42:06.815Z",
+              "WhenOpened": "2025-03-19T12:45:34.433Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "frmBaoCaoThongKe.cs [Design]",
-              "DocumentMoniker": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmBaoCaoThongKe.cs",
-              "RelativeDocumentMoniker": "BIgExe_LTHSK\\frmBaoCaoThongKe.cs",
-              "ToolTip": "D:\\c#\\BIgExe_LTHSK\\BIgExe_LTHSK\\frmBaoCaoThongKe.cs [Design]",
-              "RelativeToolTip": "BIgExe_LTHSK\\frmBaoCaoThongKe.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T12:44:19.952Z"
             }
           ]
         }
